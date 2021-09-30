@@ -1,0 +1,20 @@
+custom:
+  initializr:
+    dependencies:
+      - name: Custom Dependencies
+        content:
+          - name: Custom dependency
+            id: custom-dependency
+            groupId: your.domain
+            artifactId: custom-artifact
+            starter: false
+            description: My first custom dependency for the Spring Initializr
+      - name: Custom Dependencies
+        content:
+          - name: Custom Maven Plugin
+            id: custom-maven-plugin
+            groupId: your.domain
+            artifactId: custom-maven-plugin
+            version: 1.0.0
+            starter: false
+            description: Configures custom Maven plugin integration for project scans         

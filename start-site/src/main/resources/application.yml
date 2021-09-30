@@ -143,6 +143,11 @@ initializr:
             version: 2.1.1
           - compatibilityRange: "2.5.0-M1"
             version: 2.2.0
+      crnk:
+        groupId: io.crnk
+        artifactId: crnk-bom
+        version: 3.1.20191113192440
+        repositories: jcenter      
     gradle:
       dependency-management-plugin-version: 1.0.11.RELEASE
     kotlin:
@@ -162,7 +167,21 @@ initializr:
         url: https://oss.sonatype.org/content/repositories/snapshots/
         releasesEnabled: false
         snapshotsEnabled: true
+      jcenter:
+        name: jcenter
+        url: https://jcenter.bintray.com/
+        snapshotsEnabled: false  
   dependencies:
+    - name: CRNK
+      content:
+        - name: Crnk Spring Boot 2
+          id: crnk-spring-boot-2
+          description: Providers a JSON API implementation for Spring Boot.
+          groupId: io.crnk
+          artifactId: crnk-setup-spring-boot2
+          starter: false
+          bom: crnk
+          repository: jcenter
     - name: Developer Tools
       content:
         - name: Spring Native [Experimental]
@@ -1376,7 +1395,7 @@ initializr:
             - rel: reference
               href: https://cloud.spring.io/spring-cloud-gcp/reference/html/#spring-resources
             - rel: guide
-              href: https://github.com/GoogleCloudPlatform/spring-cloud-gcp/tree/master/spring-cloud-gcp-samples/spring-cloud-gcp-storage-resource-sample
+              href: https://github.com/GoogleCloudPlatform/spring-cloud-gcp/tree/master/spring-cloud-gcp-samples/spring-cloud-gcp-storage-resource-sample          
   types:
     - name: Maven Project
       id: maven-project
